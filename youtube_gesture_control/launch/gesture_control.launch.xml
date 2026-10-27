@@ -1,0 +1,13 @@
+<launch>
+    <!-- Camera Driver Node -->
+    <node pkg="youtube_gesture_control" exec="camera_driver" name="camera_driver" output="screen" />
+
+    <!-- Gesture Detector Node (with inline parameters if needed) -->
+    <node pkg="youtube_gesture_control" exec="gesture_detector" name="gesture_detector" output="screen">
+        <param name="min_detection_confidence" value="0.6"/>
+        <param name="min_tracking_confidence" value="0.6"/>
+    </node>
+
+    <!-- YouTube Controller Node -->
+    <node pkg="youtube_gesture_control" exec="youtube_controller" name="youtube_controller" output="screen" />
+</launch>
